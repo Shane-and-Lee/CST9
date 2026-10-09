@@ -1,3 +1,7 @@
+import re
+import joblib
+from scipy.sparse import hstack, csr_matrix
+
 import pandas as pd
 import streamlit as st
 
@@ -5,6 +9,37 @@ st.set_page_config(page_title="Phishing Email Detection", layout="wide")
 
 st.title("Phishing Email Detection Using Random Forest")
 st.caption("Results summary from the Google Colab notebook (values copied from the notebook run)")
+
+st.header("Try it: classify an email")
+
+@st.cache_resource
+def load_models():
+    return joblib.load("tfidf.joblib"), joblib.load("rf_model.joblib")
+
+tfidf, rf_model = load_models()
+
+def clean_text(text):
+    text = str(text).lower()
+    text = re.sub(r"<.*?>", " ", text)
+    text = re.sub(r"http\S+|www\.\S+", " ", text)
+    text = re.sub(r"[^a-z\s]", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+def predict(raw):
+    X_text = tfidf.transform([clean_text(raw)])
+    extra = csr_matrix([[len(raw),
+                         len(re.findall(r"http\S+|www\.\S+", raw)),
+                         sum(c.isdigit() for c in raw)]])
+    X = hstack([X_text, extra])
+    return rf_model.predict(X)[0], rf_model.predict_proba(X)[0]
+
+email = st.text_area("Paste an email here:", height=180)
+if st.button("Classify") and email.strip():
+    label, probs = predict(email)
+    if label == 1:
+        st.error(f"Likely PHISHING ({probs[1]:.1%} confidence)")
+    else:
+        st.success(f"Likely legitimate ({probs[0]:.1%} confidence)")
 
 # ---------- Dataset ----------
 st.header("Dataset")
