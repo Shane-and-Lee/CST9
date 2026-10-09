@@ -1,0 +1,76 @@
+
+Email 1: intended Phishing
+
+Subject: URGENT: Your account has been suspended
+
+Dear Customer,
+
+We detected unusual activity on your account. For your security, your account has been temporarily suspended. You must verify your identity within 24 hours or your account will be permanently closed.
+
+Click the link below to confirm your username, password and card details:
+http://secure-bank-verify.example.com/login
+
+Thank you for your cooperation.
+Customer Security Team
+
+
+_____________________________________________________________________
+
+
+Email 2: intended Phishing
+
+Subject: Urgent business proposal
+
+Dear Friend,
+
+I am Barrister James Okoro, personal attorney to the late Mr. Henry Wallace, who died in a plane crash leaving the sum of $14,500,000 in a bank here. The bank has asked me to present a next of kin, and I wish to present you as the beneficiary.
+
+You will receive 40% of the money. Please reply with your full name, phone number and bank account details so we can begin the transfer immediately. This transaction is 100% risk free but must be kept strictly confidential.
+
+Yours faithfully,
+Barrister James Okoro
+
+
+_____________________________________________________________________
+
+
+Email 3: intended Phishing
+
+Subject: Congratulations! You have won
+
+Dear Winner,
+
+Your email address was selected in our monthly online draw and you have won $1,000,000 USD! To claim your prize, send your full name, address and a processing fee of $250 to our claims agent. This offer expires in 48 hours. Reply now to claim your money.
+
+Lottery Claims Department
+
+_____________________________________________________________________
+
+
+Email 4: intended Legitimate
+
+Subject: Meeting schedule for tomorrow
+
+Vince,
+
+Please see the attached schedule for tomorrow's meeting. The group will meet at 2:00 pm in the main conference room to go over the volumes for next week. Let me know if you would like to add anything to the agenda.
+
+Thanks,
+Kate
+
+cc: Shirley, Mike
+
+
+_____________________________________________________________________
+
+
+Email 5: intended Legitimate
+
+On Mon, Aug 6, 2001 at 3:42 PM, John Smith wrote:
+> Does anyone know when the next university mailing list digest will go out?
+
+I believe the list digest goes out every Friday. I would check with the group admin if you do not see it by then.
+
+Thanks,
+Anna
+
